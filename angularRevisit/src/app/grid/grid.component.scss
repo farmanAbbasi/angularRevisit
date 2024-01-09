@@ -1,0 +1,148 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.5fr;
+    grid-template-rows: 1fr 4fr 3fr 2fr;
+    // grid-template-areas: 
+    // "main main header"
+    // "main main whatever";
+
+    height: 100vh;
+}
+
+main {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 1/3;
+    //or
+    //grid-area:1 /3 /1/ 3;
+    // or to use the above commented code
+    //use
+    //grid-area:main
+    background-color: pink;
+}
+
+.nom {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    background-color: red;
+}
+
+.yum {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    background-color: yellow;
+
+}
+
+.header2 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    background-color: orange;
+
+}
+
+.candy {
+    grid-column: 3/4;
+    grid-row: 2/5;
+    background-color: grey;
+
+}
+
+footer {
+    grid-column: 1/3;
+    grid-row: 4/5;
+    background-color: blue;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas: "a  a  b  b"
+        "a  a  b  b"
+        "a  a  c  c"
+        "d   d  d  d";
+
+    height: 100vh;
+}
+
+.a {
+    grid-area: a;
+    background-color: lightgreen;
+}
+
+.b {
+    grid-area: b;
+    background-color: yellowgreen;
+}
+
+.c {
+    grid-area: c;
+    background-color: green;
+}
+
+.d {
+    grid-area: d;
+    background-color: darkolivegreen;
+}
+
+
+.grid-container3 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "left right"
+        "left right";
+    height: 100vh;
+}
+
+.left {
+    grid-area: left;
+    background-color: goldenrod
+}
+
+.right {
+    grid-area: right;
+    background-color: gold
+}
+
+.flex-container {
+    display: flex;
+    //ye sab x axis pe kaam karta
+    // flex-direction: row; //also default
+    // justify-content: space-around;
+    // //ye y axis pe karta until flex-direction is not chnaged
+    // align-items: center;
+    height: 50vh;
+    // flex-wrap:wrap;//for mobile screen
+    // align-content: space-evenly;//only when flex-wrap :wrap
+}
+
+.flex-child1 {
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+    //flex-grow: 1;// dictribute the screen to remaining
+
+}
+
+.flex-child2 {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    //flex-grow: 1;///// dictribute the screen to remaining
+    flex:1 //has all three
+
+
+}
+//https://www.youtube.com/watch?v=phWxA89Dy94
+.flex-child3 {
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    //flex-grow: 1;// dictribute the screen to remaining
+    //flex-basis:300px;//to override width
+    order:-1//for order in ui
+
+}

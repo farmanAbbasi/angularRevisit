@@ -1,0 +1,17 @@
+<div class="main">
+    <h1>Tic Tac Toe</h1>
+    <p>Player X and Player O</p>
+    <div class="board">
+        <div *ngFor="let b of board;let i = index" (click)="makeMove(i)">
+            <div style="position: relative;" class="piece">
+                <p class="piece-content" [ngStyle]="{'color': b=='X' ? 'green' : 'white'}">{{b}}</p>
+            </div>
+
+        </div>
+    </div>
+    <h3>X won: {{playerWon.X}}</h3>
+    <h3>O won: {{playerWon.O}}</h3>
+    <button *ngIf="gameOver" (click)="reset()"> Start Again</button>
+
+</div>
+

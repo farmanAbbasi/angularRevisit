@@ -1,0 +1,38 @@
+<h1>Breweries</h1>
+<h3>Using Observables</h3>
+<ul *ngIf="brews | async; else loading">
+    <li *ngFor="let brew of brews | async">
+    <p class="name">{{ brew.name }}</p>
+    <p class="country">{{ brew.country }}</p>
+    <a class="site" href="{{ brew.website_url }}" target="_blank">visit</a>
+  </li>
+</ul>
+<ng-template #loading>
+<img src="../../assets/favicon.ico" style="width:250px;height:120px" alt="Loading...">
+</ng-template>
+<h3>Using Promises , Aync and Await</h3>
+<ul *ngIf="brews2">
+    <li *ngFor="let brew of brews2">
+    <p class="name">{{ brew.name }}</p>
+    <p class="country">{{ brew.country }}</p>
+    <a class="site" href="{{ brew.website_url }}" target="_blank">visit</a>
+  </li>
+
+</ul>
+<h3>Using Subscribe</h3>
+<ul *ngIf="brews3">
+    <li *ngFor="let brew of brews3">
+    <p class="name">{{ brew.name }}</p>
+    <p class="country">{{ brew.country }}</p>
+    <a class="site" href="{{ brew.website_url }}" target="_blank">visit</a>
+  </li>
+
+
+</ul>
+
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'red'">You selected Red!</p>
+  <p *ngSwitchCase="'blue'">You selected Blue!</p>
+  <p *ngSwitchCase="'green'">You selected Green!</p>
+  <p *ngSwitchDefault>Select a color</p>
+</div>

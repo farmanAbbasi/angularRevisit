@@ -1,0 +1,21 @@
+
+<div>
+    <p>{{ title | uppercase}}</p> <!-- Using the custom 'suffix' pipe -->
+  
+    <p>{{title | suffix }}</p>
+  
+  </div>
+  <div>
+    <app-child [childName] ="nameGivenByParent" (eventMe2)="receiveMessage($event)"></app-child>
+    <button (click)="useMyOnChanges()">click to change input value sent from parent</button>
+  
+  
+    <h2>Parent Component to use subject to pass data</h2>
+        <p>Data from Service in parent: {{ dataFromService }}</p>
+          <p>{{globals.golu}}</p>
+        <input [(ngModel)]="newData" placeholder="Enter new data" />
+        <button (click)="updateData()">Update Data</button>
+        <button (click)="chnageGolufromParent('--')">Update golu</button>
+  
+        
+  </div>

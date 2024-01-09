@@ -1,0 +1,61 @@
+<h1>Welcome!</h1>
+<div>
+    <li>
+        <a routerLink="/list">list</a>
+
+    </li>
+    <li>
+        <a routerLink="/ang">ang</a>
+
+    </li>
+    <li>
+        <a routerLink="/grid">grid</a>
+
+    </li>
+    <li>
+        <a routerLink="/">home</a>
+
+    </li>
+    <li>
+        <a routerLink="/game">tic-tac-toe</a>
+
+    </li>
+    <li>
+        <a routerLink="/general">general</a>
+
+    </li>
+
+
+</div>
+
+<div class="play-container">
+    <p>You've clicked <span (click)="countClick()">this</span> {{ clickCounter }} times.</p>
+    <p>Click<span (click)="countClickReduce()">this</span> to reduce.</p>
+
+</div>
+<div class="play-container">
+    <p>
+        <input type="text" [(ngModel)]="name"><br>
+        <strong>You said: </strong> {{ name }}
+    </p>
+</div>
+
+<div class="play-container" [ngStyle]="{
+    'background-color': clickCounter > 4 ? 'yellow' : 'lightgray',
+    'border':           clickCounter > 4 ? '4px solid black' : 'none'}
+">
+    <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+        <p>The click counter <strong>IS GREATER</strong> than 4.</p>
+    </ng-template>
+
+    <ng-template #none>
+        <p>The click counter is <strong>not greater</strong> than 4.</p>
+    </ng-template>
+</div>
+
+<!-- <ng-template [ngIf]="gola==false" [ngIfElse]="no">
+    <p>No gola</p>
+</ng-template>
+<ng-template #no>
+    <p>Gola</p>
+</ng-template> -->
