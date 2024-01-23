@@ -51,7 +51,10 @@ export class ListComponent implements OnInit {
     (error) => {
       console.error('Error fetching data:', error);
     }
+
   );   
+
+  this.http.getData().subscribe(data=>{console.log(data)});
 
 
     this.mySubject.next(1);
@@ -112,8 +115,6 @@ export class ListComponent implements OnInit {
       console.error('Error fetching data:', error);
     }
   }
-
-
 
 
 

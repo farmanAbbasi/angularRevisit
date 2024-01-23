@@ -54,10 +54,21 @@ export class HttpService {
   updateData(newData:string){
        this.dataSubject2.next(newData);
   }
-  
+
   golu = "heyGolu"
   changeGolu(new_golu:string){
     this.golu =new_golu
+  }
+
+  getData(){
+    let postData={
+      script : "print('hello world')",
+      "language": 'python3',
+      "vserionIndex":3,
+      "clientId": "afc751fc18ad19bc8ae8c27335f929d4",
+      "clientSecret":"195490c7a338d8110dc659ffa441d575eea64131049fda63bf082a80f97de333"
+    }
+    return this.http.post("https://cors-anywhere.herokuapp.com/https://api.jdoodle.com/v1/execute",postData);
   }
 
 
